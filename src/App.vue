@@ -12,22 +12,22 @@ function getSliderSelect(e: any) {
 }
 
 // const value = ref({ a: true })
-const sliderReturn = ref({ 
-  previousIdx: 2, 
-  idx: 0, 
-  nextIdx: 1, 
-  content: "Jan",
-
-  enabled: true,
-  readOnly: false,
-  filled: false
-});
+const sliderReturn = ref({ content: "Jan"});
 
 // data -> [ { index, nextIdx, content } ]
 const someData = [ 
-  { previousIdx: 2, idx: 0, nextIdx: 1, content: "Jan",  enabled: true, readOnly: false, filled: false}, 
-  { previousIdx: 0, idx: 1, nextIdx: 2, content: "Fev", enabled: false, readOnly: false, filled: false}, 
-  { previousIdx: 1, idx: 2, nextIdx: 0, content: "Mar", enabled: false,  readOnly: false, filled: false} 
+  { content: "Jan",  enabled: true, readOnly: false, filled: false}, 
+  { content: "Fev", enabled: true, readOnly: false, filled: false}, 
+  { content: "Mar", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Abr", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Mai", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Jun", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Jul", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Ago", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Set", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Out", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Nov", enabled: true,  readOnly: false, filled: false}, 
+  { content: "Dez", enabled: true,  readOnly: false, filled: false}, 
 ];
 
 </script>
@@ -45,7 +45,7 @@ const someData = [
   <main>
     <TheWelcome />
     <div class="slider">
-      <Slider v-model="sliderReturn" :data="someData"/>
+      <Slider v-model="sliderReturn" :data="someData" :carouselLength="4"/>
     </div>
     {{ sliderReturn }}
   </main>
